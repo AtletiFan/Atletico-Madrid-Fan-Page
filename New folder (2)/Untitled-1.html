@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreaxis Standings Widget</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="atletico-logo.png" alt="Atletico Madrid Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaguetable.html">League Table</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="#">Players</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="widget-container">
+        <h1>League Standings</h1>
+        
+        <!-- Embed Scoreaxis Standings Widget -->
+        <div id="scoreaxis-widget-1f7ef">
+            <iframe id="Iframe" src="https://www.scoreaxis.com/widget/standings-widget/564?autoHeight=0&amp;groupNum=undefined&amp;font=1&amp;fontSize=15&amp;removeBorders=1&amp;links=0&amp;inst=1f7ef" style="width:600px;height:600px;border:none;transition:all 300ms ease"></iframe>
+        </div>
+
+        <div style="font-size: 12px; font-family: Arial, sans-serif; text-align: left;">
+            Data provided by <a target="_blank" href="https://www.scoreaxis.com/">Scoreaxis</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Atlético de Madrid Fan Page</p>
+    </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            // Dynamic iframe resize for Scoreaxis widget
+            window.addEventListener("message", function(event) {
+                if (event.data.appHeight && "1f7ef" == event.data.inst) {
+                    var container = document.querySelector("#scoreaxis-widget-1f7ef iframe");
+                    if (container) {
+                        container.style.height = parseInt(event.data.appHeight) + "px";
+                    }
+                }
+            }, false);
+        });
+    </script>
+
+</body>
+</html>

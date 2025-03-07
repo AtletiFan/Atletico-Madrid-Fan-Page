@@ -1,0 +1,238 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+/* Body background & text styling */
+body {
+    background-color: #e41b17;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color:white;
+}
+.overlay {
+color:white;
+text-align:center;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #041E42;
+    border-radius: 20px; /* Rounded edges */
+    margin: 10px auto; /* Adds space around the header */
+    width: 90%; /* Makes it slightly smaller than full width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+.logo img {
+    width: 80px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e41b17;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Slideshow Container */
+.slideshow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slideshow Images */
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps full image visible */
+    border-radius: 20px; /* Rounded edges for images */
+    opacity: 0;
+    animation: fadeSlideshow 15s infinite;
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeSlideshow {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Assign Different Delays for Smooth Transitions */
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 5s; }
+.slideshow img:nth-child(3) { animation-delay: 10s; }
+
+/* Text & Button Styling */
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 10px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.btn {
+    display: inline-block;
+    background-color: white;
+    color: #e41b17;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.btn:hover {
+    background-color: #e41b17;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #041E42;
+    padding: 15px 0;
+    margin-top: 50px;
+    text-align:center;;
+}
+
+/* History Page Styling */
+.history {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    color: #041E42;
+}
+
+.history h1 {
+    font-size: 36px;
+    color: #041E42;
+    margin-bottom: 20px;
+}
+
+.history p {
+    font-size: 15px;
+    color: #041E42;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+/* History Images Layout */
+/* History Content Layout (Text + Images) */
+/* History Content Layout (Text + Images) */
+/* History Content Layout (Text + Images) */
+.history-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns images and text to the top */
+    gap: 20px; /* Space between text and images */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows the layout to wrap on smaller screens */
+}
+
+.left-image, .right-images {
+    max-width: 30%; /* Control width of image containers */
+}
+
+.left-image img, .right-images img {
+    border-radius: 15px; /* Rounded edges */
+    width: 100%;
+    height: 200px;
+    max-width: 100%; /* Prevent images from exceeding their container size */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+}
+
+/* Text Content */
+.text-content {
+    flex: 1; /* Allow the text to take the remaining space */
+    max-width: 60%; /* Fixed width for text content */
+    text-align: left;
+    overflow: hidden; /* Prevent overflow */
+    padding-right: 10px; /* Adds padding on the right to prevent text from touching the images */
+    color: #041E42
+}
+
+/* Set max-height and allow scrolling in case text overflows */
+.text-content p {
+    line-height: 1.6;
+    max-height: 300px; /* Limit the height of text block */
+    overflow: auto; /* Allow scrolling if the content overflows */
+}
+
+/* Button Styling */
+.btn {
+    background-color: #e41b17;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #041E42;
+}
+
+/* Responsiveness for smaller screens */
+@media screen and (max-width: 768px) {
+    .history-content {
+        flex-direction: column;
+        align-items: center; /* Center align for mobile */
+    }
+    .left-image, .right-images {
+        max-width: 90%; /* Make images smaller on mobile */
+    }
+    .text-content {
+        max-width: 90%; /* Limit text width on smaller screens */
+    }
+}
